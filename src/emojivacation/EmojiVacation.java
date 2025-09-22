@@ -88,21 +88,25 @@ public class EmojiVacation {
         return ProvidedEmojis.createSmileyFace(size);
     }
 
+
+    /**
+     * Places emoji family in desired positions
+     * @param family a list of emojis
+     * @param leftX the starting position of the leftmost family member
+     * @param baselineY the base y position of each emoji
+     * @param spacing the distance between each emoji
+     */
     private static void positionFamily(
             List<GraphicsGroup> family,
             double leftX,
             double baselineY,
             double spacing
     ) {
-        // TODO: [Instructions step 5] Iterate over the emojis in the list,
-        //       and position them all in a neat row
-
-        // The leftmost emoji’s left edge should be at leftX, and spacing is the number of pixels that should be between
-        // each emoji and the next. But how to you space them if the kids and adults have different widths? (Hint: you
-        // can ask any graphics object for its width.)
-        //
-        // The bottom of each emoji should be baselineY. But setPosition() sets the _top_! How do you set the bottom to
-        // a given position? (Hint: you can ask any graphics object for its height.)
+        double displacement = 0;
+        for (GraphicsGroup member : family) {
+            member.setPosition(leftX + displacement, baselineY - member.getHeight());
+            displacement += member.getWidth() + spacing;
+        }
     }
 
     // –––––– Scenery ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
