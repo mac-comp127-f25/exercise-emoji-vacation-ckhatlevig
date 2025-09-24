@@ -5,6 +5,10 @@ import edu.macalester.graphics.*;
 import java.awt.Color;
 import java.awt.Rectangle;
 
+/**
+ * Authored by Caleb and Kaif
+ * Part of an in-class activity. While no new emojis were made, we did fix the broken methods and get started on making a winky face.
+ */
 @SuppressWarnings("WeakerAccess")  // This stops Java from giving you warnings about your code that are not helpful here
 public class Emojis {
     private static final Color
