@@ -91,7 +91,18 @@ public class EmojiVacation {
         // type A, else with some other probability return emoji type B, else with a certain
         // probability ... etc ... else return a smiley by default.
         //
-        return ProvidedEmojis.createSmileyFace(size);
+        double pick = randomDouble(0, 100);
+        if (pick < 20) {
+            return ProvidedEmojis.createFrownyFace(size);
+        } else if (pick < 40) {
+            return ProvidedEmojis.createContentedFace(size);
+        } else if (pick < 60) {
+            return ProvidedEmojis.createWinkingFace(size);
+        } else if (pick < 80) {
+            return ProvidedEmojis.createNauseousFace(size);
+        } else {
+            return ProvidedEmojis.createSmileyFace(size);
+        }
     }
 
 
